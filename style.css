@@ -358,8 +358,8 @@ button:active {
   }
 
   canvas {
-    min-height: 280px;
-    max-height: 58vh;
+    min-height: 460px;
+    max-height: 82vh;
     touch-action: none;
   }
 
