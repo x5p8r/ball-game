@@ -378,12 +378,12 @@ function updatePaddle() {
 
 function handlePaddleBounce() {
   const hitPoint = (ball.x - (paddle.x + paddle.width / 2)) / (paddle.width / 2);
-  const nextVx = hitPoint * (4.8 + state.level * 0.35);
+  const nextVx = hitPoint * (5.2 + state.level * 0.4);
   const baseVy = Math.abs(ball.vy) || 5;
-  const nextVy = -(baseVy + 0.55 + state.level * 0.16);
+  const nextVy = -(baseVy + 0.7 + state.level * 0.18);
 
-  ball.vx = Math.max(-8.5, Math.min(8.5, nextVx));
-  ball.vy = Math.max(-12, Math.min(12, nextVy));
+  ball.vx = Math.max(-9.5, Math.min(9.5, nextVx));
+  ball.vy = Math.max(-13.2, Math.min(13.2, nextVy));
   ball.y = paddle.y - ball.radius - 2;
 
   state.score += 1;
@@ -472,12 +472,12 @@ function updateBall() {
     handlePaddleBounce();
   }
 
-  if (Math.abs(ball.vx) > 8.5) {
-    ball.vx = Math.sign(ball.vx) * 8.5;
+  if (Math.abs(ball.vx) > 9.5) {
+    ball.vx = Math.sign(ball.vx) * 9.5;
   }
 
-  if (Math.abs(ball.vy) > 12) {
-    ball.vy = Math.sign(ball.vy) * 12;
+  if (Math.abs(ball.vy) > 13.2) {
+    ball.vy = Math.sign(ball.vy) * 13.2;
   }
 
   if (ball.y - ball.radius > canvas.height) {
@@ -665,7 +665,7 @@ shopButtons.forEach((button) => {
 
 if (isMobileDevice()) {
   paddle.width = 150;
-  paddle.speed = 16;
+  paddle.speed = 18;
 }
 
 loadProgress();
