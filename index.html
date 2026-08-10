@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لعبة الكرة</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-shell">
+      <div class="hud">
+        <div class="score-box">
+          <span>النقاط</span>
+          <strong id="score">0</strong>
+        </div>
+        <div class="score-box">
+          <span>الرصيد</span>
+          <strong id="wallet">0</strong>
+        </div>
+        <div class="score-box">
+          <span>الحياة</span>
+          <strong id="lives">3</strong>
+        </div>
+        <button type="button" class="shop-toggle" id="shopToggle">المتجر</button>
+        <a href="about.html" class="about-link">عن اللعبة</a>
+      </div>
+
+      <div class="achievements-panel" id="achievementsPanel">
+        <h3>الإنجازات</h3>
+        <ul id="achievementsList">
+          <li data-achievement="80">80 نقطة: بداية قوية</li>
+          <li data-achievement="180">180 نقطة: متمرّس</li>
+          <li data-achievement="320">320 نقطة: محارب</li>
+          <li data-achievement="500">500 نقطة: أقوى</li>
+          <li data-achievement="760">760 نقطة: بطل القصة</li>
+        </ul>
+      </div>
+
+      <div class="shop-panel hidden" id="shopPanel">
+        <div class="shop-header">
+          <div>
+            <h3>المتجر</h3>
+            <span>اختر قشرة الكرة المفضلة</span>
+          </div>
+          <button type="button" class="close-shop" id="closeShop">إغلاق</button>
+        </div>
+        <div class="shop-items">
+          <div class="shop-item">
+            <span class="shop-ball ball-classic"></span>
+            <span class="skin-name">كلاسيك</span>
+            <button data-skin="classic">اختيار</button>
+          </div>
+          <div class="shop-item">
+            <span class="shop-ball ball-rose"></span>
+            <span class="skin-name">وردي</span>
+            <button data-skin="rose">شراء 120</button>
+          </div>
+          <div class="shop-item">
+            <span class="shop-ball ball-mint"></span>
+            <span class="skin-name">نيتروجين</span>
+            <button data-skin="mint">شراء 220</button>
+          </div>
+          <div class="shop-item">
+            <span class="shop-ball ball-gold"></span>
+            <span class="skin-name">ذهبي</span>
+            <button data-skin="gold">شراء 380</button>
+          </div>
+          <div class="shop-item">
+            <span class="shop-ball ball-violet"></span>
+            <span class="skin-name">بنفسجي</span>
+            <button data-skin="violet">شراء 620</button>
+          </div>
+          <div class="shop-item">
+            <span class="shop-ball ball-lava"></span>
+            <span class="skin-name">حار</span>
+            <button data-skin="lava">شراء 980</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="gameCanvas" width="900" height="520" aria-label="لعبة الكرة"></canvas>
+
+        <div id="gameOverlay" class="game-overlay">
+          <div class="game-overlay-card">
+            <h1 id="overlayTitle">كرة السعادة</h1>
+            <p id="overlayText">ابدأ اللعبة وتفادى الأعداء واحتفظ بالكرة داخل المنصة.</p>
+            <button id="startBtn">ابدأ اللعبة</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

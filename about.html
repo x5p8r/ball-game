@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>عن اللعبة</title>
+    <style>
+      :root {
+        --bg: #f9f1ea;
+        --panel: rgba(255, 252, 249, 0.9);
+        --brown: #5f4337;
+        --soft: #f6d5b8;
+        --peach: #f3b993;
+        --rose: #f3a6ae;
+        --gold: #f4d58a;
+        --shadow: rgba(92, 65, 52, 0.15);
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: radial-gradient(circle at top, #fffaf6 0%, #f6e6d8 30%, #e9d1ba 100%);
+        color: var(--brown);
+        padding: 24px;
+      }
+
+      .page {
+        width: min(92vw, 820px);
+        background: var(--panel);
+        border: 2px solid rgba(122, 82, 60, 0.18);
+        border-radius: 24px;
+        box-shadow: 0 22px 45px var(--shadow);
+        padding: 28px 24px 20px;
+      }
+
+      .topbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2rem, 3vw, 2.7rem);
+      }
+
+      .back-btn {
+        text-decoration: none;
+        background: linear-gradient(135deg, #f7c9a1, #f4b8a8);
+        color: var(--brown);
+        border-radius: 999px;
+        padding: 10px 18px;
+        font-weight: 800;
+        box-shadow: 0 10px 20px rgba(188, 116, 84, 0.2);
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.5);
+        border: 1px solid rgba(122, 82, 60, 0.1);
+        border-radius: 18px;
+        padding: 18px;
+        margin-top: 16px;
+      }
+
+      p {
+        margin: 0 0 12px;
+        line-height: 1.8;
+      }
+
+      ul {
+        margin: 0;
+        padding-right: 18px;
+        line-height: 2;
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+        margin-top: 14px;
+      }
+
+      .feature {
+        background: rgba(255, 255, 255, 0.4);
+        border: 1px solid rgba(122, 82, 60, 0.08);
+        border-radius: 14px;
+        padding: 14px 12px;
+        text-align: center;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="topbar">
+        <h1>عن لعبة الكرة</h1>
+        <a class="back-btn" href="index.html">العودة إلى اللعبة</a>
+      </div>
+
+      <div class="card">
+        <p>لعبة الكرة هي تجربة_arcade بسيطة وممتعة تجمع بين السرعة، التحدي، والاهتمام بالتفاصيل.</p>
+        <p>في هذه اللعبة، يتوجب عليك توجيه المضرب، تفادي الأعداء، وتحقيق أعلى عدد من النقاط مع الاحتفاظ بالكرة داخل المنصة.</p>
+      </div>
+
+      <div class="card">
+        <h2>مميزاتها</h2>
+        <div class="features">
+          <div class="feature">مستويات متدرجة</div>
+          <div class="feature">أعداء متحركون</div>
+          <div class="feature">نظام إنجازات</div>
+          <div class="feature">متجر كرات</div>
+          <div class="feature">حفظ محلي</div>
+          <div class="feature">أصوات Arcade</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>كيف تلعب؟</h2>
+        <ul>
+          <li>استخدم الماوس أو الأسهم للتحكم في المضرب.</li>
+          <li>اقذف الكرة لتدمير أعدائك وجمع النقاط.</li>
+          <li>احفظ رصيدك لشراء كرات جديدة من المتجر.</li>
+          <li>احتفظ بالحياة وواصل التقدم لتحقيق الإنجازات.</li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
