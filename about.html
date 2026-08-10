@@ -95,6 +95,30 @@
         text-align: center;
         font-weight: 700;
       }
+
+      a {
+        color: var(--brown);
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      a:visited {
+        color: var(--brown);
+      }
+      a:active {
+        color: var(--brown);
+      }
+      a:focus {
+        outline: 2px solid var(--brown);
+        outline-offset: 2px;
+      }
+      a:focus-visible {
+        outline: 2px solid var(--brown);
+        outline-offset: 2px;
+      }
     </style>
   </head>
   <body>
@@ -106,7 +130,7 @@
 
       <div class="card">
         <p>لعبة الكرة هي تجربة_arcade بسيطة وممتعة تجمع بين السرعة، التحدي، والاهتمام بالتفاصيل.</p>
-        <p>في هذه اللعبة، يتوجب عليك توجيه المضرب، تفادي الأعداء، وتحقيق أعلى عدد من النقاط مع الاحتفاظ بالكرة داخل المنصة.</p>
+        <p>في هذه اللعبة، يتوجب عليك توجيه المضرب، وتحقيق أعلى عدد من النقاط مع الاحتفاظ بالكرة داخل المنصة.</p>
       </div>
 
       <div class="card">
@@ -124,11 +148,21 @@
       <div class="card">
         <h2>كيف تلعب؟</h2>
         <ul>
-          <li>استخدم الماوس أو الأسهم للتحكم في المضرب.</li>
-          <li>اقذف الكرة لتدمير أعدائك وجمع النقاط.</li>
+          <li>استخدم الماوس أو اللمس للتحكم في المضرب.</li>
+          <li>اقذف الكرة لتدمير اهدافك وجمع النقاط.</li>
           <li>احفظ رصيدك لشراء كرات جديدة من المتجر.</li>
           <li>احتفظ بالحياة وواصل التقدم لتحقيق الإنجازات.</li>
         </ul>
+      </div>
+
+
+      <div class="card">
+        <h2>معلومات المطور</h2>
+        <p>تم تطوير هذه اللعبة بواسطة سلمان امين.</p>
+        <div class="features">
+          <div class="feature"><a href="https://github.com/x5p8r" target="_blank">GitHub</a></div>
+          <div class="feature"><a href="https://www.instagram.com/salman__emin" target="_blank">Instagram</a></div>
+        </div>
       </div>
     </main>
   </body>
