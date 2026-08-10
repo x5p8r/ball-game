@@ -32,7 +32,7 @@ const paddle = {
   height: 20,
   x: (canvas.width - 180) / 2,
   y: canvas.height - 35,
-  speed: 10,
+  speed: 12,
 };
 
 const ball = {
@@ -378,12 +378,12 @@ function updatePaddle() {
 
 function handlePaddleBounce() {
   const hitPoint = (ball.x - (paddle.x + paddle.width / 2)) / (paddle.width / 2);
-  const nextVx = hitPoint * (4.2 + state.level * 0.3);
+  const nextVx = hitPoint * (4.8 + state.level * 0.35);
   const baseVy = Math.abs(ball.vy) || 5;
-  const nextVy = -(baseVy + 0.45 + state.level * 0.12);
+  const nextVy = -(baseVy + 0.55 + state.level * 0.16);
 
-  ball.vx = Math.max(-7.5, Math.min(7.5, nextVx));
-  ball.vy = Math.max(-10.5, Math.min(10.5, nextVy));
+  ball.vx = Math.max(-8.5, Math.min(8.5, nextVx));
+  ball.vy = Math.max(-12, Math.min(12, nextVy));
   ball.y = paddle.y - ball.radius - 2;
 
   state.score += 1;
@@ -472,12 +472,12 @@ function updateBall() {
     handlePaddleBounce();
   }
 
-  if (Math.abs(ball.vx) > 7.5) {
-    ball.vx = Math.sign(ball.vx) * 7.5;
+  if (Math.abs(ball.vx) > 8.5) {
+    ball.vx = Math.sign(ball.vx) * 8.5;
   }
 
-  if (Math.abs(ball.vy) > 10.5) {
-    ball.vy = Math.sign(ball.vy) * 10.5;
+  if (Math.abs(ball.vy) > 12) {
+    ball.vy = Math.sign(ball.vy) * 12;
   }
 
   if (ball.y - ball.radius > canvas.height) {
@@ -616,6 +616,10 @@ function setPaddleFromPointer(clientX) {
   paddle.x = Math.max(0, Math.min(canvas.width - paddle.width, paddle.x));
 }
 
+function isMobileDevice() {
+  return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+}
+
 canvas.addEventListener('mousemove', (event) => {
   setPaddleFromPointer(event.clientX);
 });
@@ -658,6 +662,11 @@ shopButtons.forEach((button) => {
     saveProgress();
   });
 });
+
+if (isMobileDevice()) {
+  paddle.width = 150;
+  paddle.speed = 16;
+}
 
 loadProgress();
 createStars();
