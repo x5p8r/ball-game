@@ -64,6 +64,11 @@ const keys = {
   right: false,
 };
 
+const touchState = {
+  active: false,
+  pointerX: canvas.width / 2,
+};
+
 const achievementGoals = [80, 180, 320, 500, 760];
 
 function randomBetween(min, max) {
@@ -364,6 +369,10 @@ function updatePaddle() {
     paddle.x += paddle.speed;
   }
 
+  if (touchState.active) {
+    paddle.x = touchState.pointerX - paddle.width / 2;
+  }
+
   paddle.x = Math.max(0, Math.min(canvas.width - paddle.width, paddle.x));
 }
 
@@ -598,11 +607,37 @@ window.addEventListener('keyup', (event) => {
   }
 });
 
-canvas.addEventListener('mousemove', (event) => {
+function setPaddleFromPointer(clientX) {
   const rect = canvas.getBoundingClientRect();
-  const mouseX = event.clientX - rect.left;
-  paddle.x = mouseX - paddle.width / 2;
+  const relativeX = ((clientX - rect.left) / rect.width) * canvas.width;
+  touchState.pointerX = relativeX;
+  touchState.active = true;
+  paddle.x = relativeX - paddle.width / 2;
   paddle.x = Math.max(0, Math.min(canvas.width - paddle.width, paddle.x));
+}
+
+canvas.addEventListener('mousemove', (event) => {
+  setPaddleFromPointer(event.clientX);
+});
+
+canvas.addEventListener('touchstart', (event) => {
+  const touch = event.touches[0];
+  if (touch) {
+    setPaddleFromPointer(touch.clientX);
+    event.preventDefault();
+  }
+}, { passive: false });
+
+canvas.addEventListener('touchmove', (event) => {
+  const touch = event.touches[0];
+  if (touch) {
+    setPaddleFromPointer(touch.clientX);
+    event.preventDefault();
+  }
+}, { passive: false });
+
+canvas.addEventListener('touchend', () => {
+  touchState.active = false;
 });
 
 startBtn.addEventListener('click', () => {

@@ -319,7 +319,7 @@ button:active {
   }
 
   .game-shell {
-    width: min(96vw, 960px);
+    width: min(98vw, 960px);
     padding: 12px 10px 10px;
   }
 
@@ -351,6 +351,16 @@ button:active {
 
   .shop-item button {
     font-size: 0.72rem;
+  }
+
+  .canvas-wrap {
+    margin-top: 8px;
+  }
+
+  canvas {
+    min-height: 280px;
+    max-height: 58vh;
+    touch-action: none;
   }
 
   .game-overlay-card {
