@@ -337,7 +337,7 @@ function endGame() {
 function winGame() {
   state.running = false;
   state.won = true;
-  showOverlay('أحسنت! فزت', `لقد أنكيت جميع المستويات بنجاح! النقاط: ${state.score}`);
+  showOverlay('أحسنت! فزت', `لقد انهيت جميع المستويات بنجاح! النقاط: ${state.score}`);
   startBtn.textContent = 'لعب مرة أخرى';
   playTone(620, 0.12, 'triangle', 0.06);
   setTimeout(() => playTone(780, 0.12, 'triangle', 0.06), 110);
